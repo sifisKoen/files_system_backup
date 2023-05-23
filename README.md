@@ -1,2 +1,28 @@
-# files_system_backup
-This is a repository for my own dot files and config files. This repository created only for my convenience so to have my files saved.
+# Files Ssystem Backup
+
+![NeofetchImage](./Screenshots/BatmanNeofetch.png)
+
+This reposiroty includes some of mine configurations for my **terminal dotfiles** and **.config** directory.
+
+Here you can see the structure for this repository:
+
+
+├── .bash_profile
+├── .bashrc
+├── kitty
+│   └── kitty.conf
+├── LICENSE
+├── neofetch
+│   ├── config.conf
+│   └── neofetchImages
+│       └── LinuxPengImg
+│           ├── batmanPeg.png
+│           ├── BlueHatPeg.png
+│           ├── DrunkPeg.png
+│           ├── gunPeg.png
+│           ├── ningaPeg.png
+│           ├── phdPeg.png
+│           └── SamuraiPeg.png
+├── README.md
+└── Screenshots
+    └── BatmanNeofetch.png
