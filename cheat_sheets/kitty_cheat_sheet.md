@@ -1,15 +1,15 @@
-# Kitty Shortcuts 󰄛 
+# Kitty Shortcuts 🐱
 
 This file shows some shortcust for Kitty terminal emulator.
 
-## Windows 󱃶 
+## Windows 🗔 
 
 **Open New Window:** Ctrl + Shift + Enter
 **Close Window:** Ctrl + Shift + W
 **Next Window:** Ctrl + Shift + ]
 **Previous Window:** Ctrl + Shift + [
 
-## Tabs 󰓩 
+## Tabs 📑
 
 **New Tab:** Ctrl + Shift + T
 **Close Tab:** Ctrl + Shift + Q
@@ -17,7 +17,7 @@ This file shows some shortcust for Kitty terminal emulator.
 **Prevous Tab:** Ctrl + Shift + Left
 **Resize Tabs:** Ctrl + Shift + R
 
-## Scrolling 󰛾
+## Scrolling 📜
 
 **Line Up:** Ctrl + Shift + Up
 **Line Down:** Ctrl + Shift + Down
