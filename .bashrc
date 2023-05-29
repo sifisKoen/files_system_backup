@@ -8,7 +8,8 @@ HISTTIMEFORMAT="%F %T "
 HISTCONTROL=ignoredups
 
 
-
+# ANSI colors Wiki: https://en.wikipedia.org/wiki/ANSI_escape_code
+#
 blue=$(tput setaf 61);
 green=$(tput setaf 216);
 grey=$(tput setaf 24);
@@ -124,6 +125,9 @@ alias grep='grep --color=auto'
 
 # Upgrade font cashe for /usr/lockal/fonts
 alias fontuc='sudo fc-cache -fv'
+
+# Display Images in Command Line
+alias icat='kitty +kitten icat'
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
