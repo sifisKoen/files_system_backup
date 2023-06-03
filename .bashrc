@@ -129,6 +129,9 @@ alias fontuc='sudo fc-cache -fv'
 # Display Images in Command Line
 alias icat='kitty +kitten icat'
 
+# ls -al
+alias la='ls -al'
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
