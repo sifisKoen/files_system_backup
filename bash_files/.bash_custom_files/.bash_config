@@ -1,0 +1,35 @@
+# In this file I have all my bash configs (colors, change editor, etc).
+# Make the call to your .bashrc file so to work
+# Include this command to your .bashrc -> source ~/.dotfiles/.bash_custom_files/.bash_config 
+
+
+# Change my default Editor
+EDITOR=/usr/bin/vim
+# Add date and time on bash history
+HISTTIMEFORMAT="%F %T "
+# Ignore duplicate commands in the history
+HISTCONTROL=ignoredups
+
+
+#######################################
+############ My Colors ################
+#######################################
+
+# ANSI colors Wiki: https://en.wikipedia.org/wiki/ANSI_escape_code
+#
+blue=$(tput setaf 61);
+green=$(tput setaf 216);
+grey=$(tput setaf 24);
+orange=$(tput setaf 166);
+bold=$(tput bold);
+reset=$(tput sgr0);
+
+blk='\[\033[01;30m\]'   # Black
+red='\[\033[01;31m\]'   # Red
+grn='\[\033[01;32m\]'   # Green
+ylw='\[\033[01;33m\]'   # Yellow
+blu='\[\033[01;34m\]'   # Blue
+pur='\[\033[01;35m\]'   # Purple
+cyn='\[\033[01;36m\]'   # Cyan
+wht='\[\033[01;37m\]'   # White
+clr='\[\033[00m\]'      # Reset

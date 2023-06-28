@@ -1,0 +1,74 @@
+# In this file I have all my git functions.
+# All these functions print to the command prompt.
+# Make the call to your .bashrc file so to work
+# Include this command to your .bashrc -> source ~/.dotfiles/.bash_custom_files/.bash_git_functions
+
+function git_directory() {
+    if [ -d .git ] ; then
+
+        # Check the git status.
+        git_status=$(git status --porcelain)
+
+        # If there are uncommitted changes (After a git add)
+        if [[ $(echo "$git_status" | grep "^M") ]]; then
+            color=$(tput setaf 1) # red
+        # If there are unstaged changes
+        elif [[ $(echo "$git_status" | grep "^ M") ]]; then
+            color=$(tput setaf 3) # yello
+        else
+            color=$(tput setaf 4) # blue
+        fi
+        printf "${color} "
+    fi
+}
+
+function git_branch() {
+    if [ -d .git ] ; then
+
+        # Get current git branch name
+        current_brunch_name=$(git branch --show-current)
+
+        # Check if there are commits to be pushed
+        git_log=$(git log origin/$current_brunch_name..HEAD 2> /dev/null)
+
+        # If there are commits to be pushed
+        if [ -n "$git_log" ]; then
+            color=$(tput setaf 2) #green
+            branch_status="*"
+        # If there are no commits to be pushed
+        else
+            color=$(tput setaf 4) #blue
+            branch_status=""
+        fi
+        printf "${color}%s " "(${current_brunch_name}${branch_status})"
+        #printf "%s  " "($(git branch 2> /dev/null | awk '/\*/{print $2}'))";
+    fi
+}
+
+function git_unpushed_commits() {
+    if [ -d .git ] ; then
+            unpushed_count=$(git log @{u}.. --pretty=format:"%h" 2> /dev/null wc -l)
+            if [ -n "$unpushed_count" ]; then
+                printf " \n%s\n" "unpushed_count"
+            fi
+   fi
+}
+
+function git_untrucked_files() {
+    if [ -d .git ] ; then
+            # Check for untrucked files
+            untracked_files=$(git ls-files --others --exclude-standard 2> /dev/null)
+            if [ -n "$untrucked_files" ] ; then
+                    printf "󱁻 ";
+            fi
+  fi
+}
+
+
+function git_status_functions() {
+    git_directory
+    git_branch
+    git_unpushed_commits
+    git_untrucked_files
+    echo ""
+}
