@@ -13,32 +13,46 @@ This reposiroty includes some of mine configurations for my **terminal dotfiles*
 Here you can see the structure for this repository:
 
 
-    ├── .bash_profile
-    ├── .bashrc
+    .
+    ├── bash_files
+    ├── cheat_sheets
+    │   └── kitty_cheat_sheet.md
     ├── kitty
-    │   └── kitty.conf
+    │   └── kitty.conf
     ├── LICENSE
     ├── neofetch
-    │   ├── config.conf
-    │   └── neofetchImages
-    │       └── LinuxPengImg
-    │           ├── batmanPeg.png
-    │           ├── BlueHatPeg.png
-    │           ├── DrunkPeg.png
-    │           ├── gunPeg.png
-    │           ├── ningaPeg.png
-    │           ├── phdPeg.png
-    │           └── SamuraiPeg.png
+    │   ├── config.conf
+    │   └── neofetchImages
+    │       └── LinuxPengImg
+    │           ├── batmanPeg.png
+    │           ├── BlueHatPeg.png
+    │           ├── DrunkPeg.png
+    │           ├── gunPeg.png
+    │           ├── ningaPeg.png
+    │           ├── phdPeg.png
+    │           └── SamuraiPeg.png
     ├── README.md
-    └── Screenshots
-        └── BatmanNeofetch.png
+    ├── Screenshots
+    │   └── BatmanNeofetch.png
+    └── scripts
+        └── installingProgramms.sh
 
 ## Installation
 
 So to make all these configs visible and available to you, Firstly you need to `clone` this repository to your preference directory in your system. Then you need to coppy the files or the directories to your `$HOME` directory (`~`). 
 
 ### Dot Files
-If the file you want for your system is dot file then you need to move **both** `.bashrc` and `.bash_profile` files to your **home directory**.
+If the file you want for your system is dot file then you need to move files from **bash_files** directory into your `$HOME` directory.
+
+Run this code.
+
+`mkdir ~/.dotfiles ; cp -r bash_files ~/.dotfiles ; ln -s ~/.dotfiles/bash_files/.bashrc ~/.bashrc`
+
+#### Let's break down the command
+
+1. First we create a file `.dotfiles`.
+2. Then we copy the `bash_files` directory to the `.dotfiles`.
+3. In this step we create a **symlink** for the `.bashrc` to our `$HOME` directory.
 
 ### Config Directories
 If you want the configuration files for your system you need to move the `kitty` and/or `neofetch` toy your **.config** directory witch is in your `$HOME` (`~`) directory.
