@@ -2,7 +2,7 @@
 
 ![NeofetchImage](./Screenshots/BatmanNeofetch.png)
 
-This reposiroty includes some of mine configurations for my **terminal dotfiles** and **.config** directory.
+This repository includes some of mine configurations for my **terminal dotfiles** and **.config** directory.
 
 > Note that I use **Nerd Font** for my icons and letters style. More particular I use **Hack Nerd Font**
 > 
@@ -35,16 +35,28 @@ Here you can see the structure for this repository:
     ├── Screenshots
     │   └── BatmanNeofetch.png
     └── scripts
-        └── installingProgramms.sh
+        └── installingPrograms.sh
 
 ## Installation
 
-So to make all these configs visible and available to you, Firstly you need to `clone` this repository to your preference directory in your system. Then you need to coppy the files or the directories to your `$HOME` directory (`~`). 
+So to make all these configs visible and available to you, Firstly you need to `clone` this repository to your preference directory in your system. Then you need to copy the files or the directories to your `$HOME` directory (`~`). 
 
 ### Dot Files
 If the file you want for your system is dot file then you need to move files from **bash_files** directory into your `$HOME` directory.
 
-Run this code.
+Before that you will need to install `lsd` command. Witch is a replacement of the `ls` command. With combination with the **Nerd Font** and my **alias** you will have an output like this:
+
+![lsdCommand](./Screenshots/lsd%20Command%20Example.png)
+
+To install the `lsd` command just run this command:
+
+`sudo apt/dnf/pacman snd`
+
+And when you apply all the dot files, you will have a **command line** like this:
+
+![CommandPrompt](./Screenshots/Command%20Prompt.png)
+
+So to have similar **command line** you can run this command.
 
 `mkdir ~/.dotfiles ; cp -r bash_files ~/.dotfiles ; ln -s ~/.dotfiles/bash_files/.bashrc ~/.bashrc`
 
