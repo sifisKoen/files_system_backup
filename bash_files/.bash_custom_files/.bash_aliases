@@ -27,3 +27,7 @@ alias lsd='lsd -lSF --group-directories-first --extensionsort --header'
 
 # lsd -alSF --group-directories-first --extensionsort --header
 alias la='lsd -alSF'
+
+
+# Open pdf files
+alias open='xdg-open'
