@@ -149,3 +149,10 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 
 # Install the package of VS studio (Fedora 22 and above)
 sudo dnf install code -y
+
+
+##########################################
+################# lsd ####################
+##########################################
+
+sudo dnf lsd -y
