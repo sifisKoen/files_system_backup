@@ -1,6 +1,11 @@
 #!/bin/sh
 
-cd /tmp || or exit
+if [ "$(id -u)" -ne 0 ]; then
+   echo "Please run this script with sudo."
+   exit 1
+fi
+
+cd /tmp || exit
 
 # List the nerd fonts as a space-separated string
 fonts="CascadiaCode FiraCode Go-Mono Hack Inconsolata Iosevka JetBrainsMono Mononoki RobotoMono SourceCodePro UbuntuMono"
