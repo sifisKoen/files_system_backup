@@ -13,29 +13,32 @@ This repository includes some of mine configurations for my **terminal dotfiles*
 Here you can see the structure for this repository:
 
 
-    .
     ├── bash_files
     ├── cheat_sheets
-    │   └── kitty_cheat_sheet.md
+    │   └── kitty_cheat_sheet.md
     ├── kitty
-    │   └── kitty.conf
+    │   └── kitty.conf
     ├── LICENSE
     ├── neofetch
-    │   ├── config.conf
-    │   └── neofetchImages
-    │       └── LinuxPengImg
-    │           ├── batmanPeg.png
-    │           ├── BlueHatPeg.png
-    │           ├── DrunkPeg.png
-    │           ├── gunPeg.png
-    │           ├── ningaPeg.png
-    │           ├── phdPeg.png
-    │           └── SamuraiPeg.png
+    │   ├── config.conf
+    │   └── neofetchImages
+    │       └── LinuxPengImg
+    │           ├── batmanPeg.png
+    │           ├── BlueHatPeg.png
+    │           ├── DrunkPeg.png
+    │           ├── gunPeg.png
+    │           ├── ningaPeg.png
+    │           ├── phdPeg.png
+    │           └── SamuraiPeg.png
     ├── README.md
     ├── Screenshots
-    │   └── BatmanNeofetch.png
+    │   ├── BatmanNeofetch.png
+    │   ├── Command Prompt.png
+    │   └── lsd Command Example.png
     └── scripts
-        └── installingPrograms.sh
+        ├── dotfiles_install.sh
+        ├── installingPrograms.sh
+        └── nerdfont_install.sh
 
 ## Installation
 
@@ -56,15 +59,25 @@ And when you apply all the dot files, you will have a **command line** like this
 
 ![CommandPrompt](./Screenshots/Command%20Prompt.png)
 
-So to have similar **command line** you can run this command.
+So to have similar **command line** you need to follow the two simple steps:
 
-`mkdir ~/.dotfiles ; cp -r bash_files ~/.dotfiles ; ln -s ~/.dotfiles/bash_files/.bashrc ~/.bashrc`
+### Install Nerd Fonts
 
-#### Let's break down the command
+Firstly you need to install some **Nerd fonts** for this reason there is a scrip under the `script` directory. You just need to run this script.
 
-1. First we create a file `.dotfiles`.
-2. Then we copy the `bash_files` directory to the `.dotfiles`.
-3. In this step we create a **symlink** for the `.bashrc` to our `$HOME` directory.
+`cd scripts/`
+
+Then you need to make the script executable for this just run: `chmod +x nerdfont_install.sh`
+
+And now you are ready to run the script. Very important ! **The script will install the nerd fonts under /usr/share/fonts directory** the reason behind this is because in this way the fonts will be available to all users in the machine.
+
+Now to run the script just run this command: `sudo ./nerdfont_install.sh`
+
+### Config the command line
+
+Now that you have the **Nerd fonts** to your fonts directory you can run an other script in the `scripts` directory, the `dotfiles_install.sh`. This script will create the `.dotfiles` directory in your `$HOME` and will move the dotfiles from the cloned repo to this directory and finally it will create symbolic link for the new `.bashrc` file.
+
+You just need to run the script with as before it needs to change its privilege to executable just run this command: `chmod +x .dotfiles_install.sh` and now you can run the script using this command: `./dotfiles_install.sh` 
 
 ### Config Directories
 If you want the configuration files for your system you need to move the `kitty` and/or `neofetch` toy your **.config** directory witch is in your `$HOME` (`~`) directory.
