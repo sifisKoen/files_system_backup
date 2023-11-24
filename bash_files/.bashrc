@@ -6,7 +6,7 @@ source ~/.dotfiles/.bash_custom_files/.bash_config
 source ~/.dotfiles/.bash_custom_files/.bash_git_functions
 source ~/.dotfiles/.bash_custom_files/.bash_tool_functions
 ############ My Aliases ###############
-source ~/.dotfiles/.bash_custom_files/.bash_aliases
+# source ~/.dotfiles/.bash_custom_files/.bash_aliases
 
 user_icon="\[${grey}\]  "
 computer_icon="\[${blue}\]   "
@@ -14,7 +14,7 @@ directory_icon="\[${green}\]   "
 double_arrows="  "
 user_name="\[${grey}\]\u";
 host_machine="\[${blue}\]\h";
-current_directory="\[${green}\]\w ";
+current_directory="\[${green}\] \w ";
 end="\[${reset}\]";
 b_thikness="\[${bold}\]";
 prtompt_arrow="\[${green}\] ";
@@ -29,8 +29,9 @@ my_custom_prompt+=$computer_icon;
 my_custom_prompt+=$host_machine;
 my_custom_prompt+=$double_arrows;
 my_custom_prompt+=$directory_icon;
-my_custom_prompt+=$current_directory;
+my_custom_prompt+='['$current_directory']';
 my_custom_prompt+=$git_status_functions_call
+my_custom_prompt+='\n ';
 my_custom_prompt+=$prtompt_arrow;
 my_custom_prompt+=$end;
 
@@ -66,3 +67,22 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
+export GOPATH=$HOME/go
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+        . "/usr/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="$PATH:/home/sifis/.foundry/bin"
